@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	o_orderpriority,
 	count(*) as order_count
@@ -24,5 +23,5 @@ where
 group by
 	o_orderpriority
 order by
-	o_orderpriority;
-:n -1
+	o_orderpriority
+:o;

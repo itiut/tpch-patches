@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	l_shipmode,
 	sum(case
@@ -31,5 +30,5 @@ where
 group by
 	l_shipmode
 order by
-	l_shipmode;
-:n -1
+	l_shipmode
+:o;

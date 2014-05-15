@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	100.00 * sum(case
 		when p_type like 'PROMO%'
@@ -16,5 +15,5 @@ from
 where
 	l_partkey = p_partkey
 	and l_shipdate >= date ':1'
-	and l_shipdate < date ':1' + interval '1' month;
-:n -1
+	and l_shipdate < date ':1' + interval '1' month
+:o;

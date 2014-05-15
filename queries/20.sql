@@ -3,7 +3,6 @@
 -- Function Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	s_name,
 	s_address
@@ -40,5 +39,5 @@ where
 	and s_nationkey = n_nationkey
 	and n_name = ':3'
 order by
-	s_name;
-:n -1
+	s_name
+:o;

@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	p_brand,
 	p_type,
@@ -33,5 +32,5 @@ order by
 	supplier_cnt desc,
 	p_brand,
 	p_type,
-	p_size;
-:n -1
+	p_size
+:o;

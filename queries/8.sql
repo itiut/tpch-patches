@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	o_year,
 	sum(case
@@ -40,5 +39,5 @@ from
 group by
 	o_year
 order by
-	o_year;
-:n -1
+	o_year
+:o;

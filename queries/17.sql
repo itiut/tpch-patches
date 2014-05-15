@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	sum(l_extendedprice) / 7.0 as avg_yearly
 from
@@ -20,5 +19,5 @@ where
 			lineitem
 		where
 			l_partkey = p_partkey
-	);
-:n -1
+	)
+:o;

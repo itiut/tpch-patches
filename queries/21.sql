@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	s_name,
 	count(*) as numwait
@@ -42,5 +41,6 @@ group by
 	s_name
 order by
 	numwait desc,
-	s_name;
+	s_name
 :n 100
+:o;

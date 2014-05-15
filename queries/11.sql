@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	ps_partkey,
 	sum(ps_supplycost * ps_availqty) as value
@@ -30,5 +29,5 @@ group by
 				and n_name = ':1'
 		)
 order by
-	value desc;
-:n -1
+	value desc
+:o;

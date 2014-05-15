@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	supp_nation,
 	cust_nation,
@@ -42,5 +41,5 @@ group by
 order by
 	supp_nation,
 	cust_nation,
-	l_year;
-:n -1
+	l_year
+:o;

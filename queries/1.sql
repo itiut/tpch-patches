@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	l_returnflag,
 	l_linestatus,
@@ -24,5 +23,5 @@ group by
 	l_linestatus
 order by
 	l_returnflag,
-	l_linestatus;
-:n -1
+	l_linestatus
+:o;

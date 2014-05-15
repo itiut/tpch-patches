@@ -3,7 +3,6 @@
 -- Functional Query Definition
 -- Approved February 1998
 :x
-:o
 select
 	nation,
 	o_year,
@@ -35,5 +34,5 @@ group by
 	o_year
 order by
 	nation,
-	o_year desc;
-:n -1
+	o_year desc
+:o;
