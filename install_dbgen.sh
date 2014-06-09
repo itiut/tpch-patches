@@ -54,7 +54,18 @@ apply_patches_to_dbgen() {
 make_and_insall() {
     _echo "Make ..."
     make -f makefile.suite -C $DBGEN_DIR
-    # _echo "Install ..."
+
+    _echo "Install ..."
+    for bin in dbgen qgen; do
+        if [ ! -f $BIN_DIR/$bin ]; then
+            cat > $BIN_DIR/$bin <<EOF
+#!/bin/sh
+exec "$DBGEN_DIR/$bin" "-b" "$DBGEN_DIR/dists.dss" "\$@"
+EOF
+            chmod +x $BIN_DIR/$bin
+            _echo "Wrote $BIN_DIR/$bin"
+        fi
+    done
 }
 
 ensure_directories
