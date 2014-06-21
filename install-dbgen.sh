@@ -60,6 +60,7 @@ make_and_insall() {
         if [ ! -f $BIN_DIR/$bin ]; then
             cat > $BIN_DIR/$bin <<EOF
 #!/bin/sh
+cd $PWD/queries
 exec "$DBGEN_DIR/$bin" "-b" "$DBGEN_DIR/dists.dss" "\$@"
 EOF
             chmod +x $BIN_DIR/$bin
