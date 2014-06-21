@@ -60,7 +60,13 @@ make_and_insall() {
         if [ ! -f $BIN_DIR/$bin ]; then
             cat > $BIN_DIR/$bin <<EOF
 #!/bin/sh
+EOF
+            if [ "$bin" = 'qgen' ]; then
+                cat >> $BIN_DIR/$bin <<EOF
 cd $PWD/queries
+EOF
+            fi
+            cat >> $BIN_DIR/$bin <<EOF
 exec "$DBGEN_DIR/$bin" "-b" "$DBGEN_DIR/dists.dss" "\$@"
 EOF
             chmod +x $BIN_DIR/$bin
