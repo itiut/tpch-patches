@@ -1,0 +1,18 @@
+--- tpcd.h.orig	2015-02-18 14:37:56.915270124 +0900
++++ tpcd.h	2015-02-18 16:16:12.449267798 +0900
+@@ -112,6 +112,15 @@
+ #define SET_DBASE       ".LOGON %s\n"
+ #endif
+ 
++#ifdef POSTGRES
++#define GEN_QUERY_PLAN  "EXPLAIN ANALYZE"
++#define START_TRAN      "BEGIN"
++#define END_TRAN        "COMMIT"
++#define SET_OUTPUT      ""
++#define SET_ROWCOUNT    "LIMIT %d\n"
++#define SET_DBASE       "\c %s;\n"
++#endif
++
+ #define MAX_VARS      8 /* max number of host vars in any query */
+ #define QLEN_MAX   2048 /* max length of any query */
+ #define QUERIES_PER_SET 22
