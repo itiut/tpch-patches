@@ -1,7 +1,7 @@
 tpch-patches
 ====
 
-Patches to run TPC-H benchmark on PostgreSQL and MySQL.
+Patches to run TPC-H benchmark on PostgreSQL and MySQL
 
 
 Supported version
