@@ -2,6 +2,10 @@
 set -eu
 cd $(dirname $0)
 
+usage() {
+    echo "Usage: [PREFIX=\$HOME] $0 <postgres|mysql>"
+}
+
 if [ $# -ne 1 ]; then
     usage
     exit 1
@@ -25,10 +29,6 @@ BIN_DIR=$PREFIX/bin
 SRC_DIR=$PREFIX/src
 SHARE_DIR=$PREFIX/share/dbgen
 DBGEN_DIR=$SRC_DIR/$TPCH_PROG/dbgen
-
-usage() {
-    echo "Usage: [PREFIX=\$HOME] $0 <postgres|mysql>"
-}
 
 ensure_directories() {
     for dir in $BIN_DIR $SRC_DIR $SHARE_DIR; do
