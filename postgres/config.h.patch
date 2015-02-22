@@ -1,0 +1,7 @@
+--- config.h.orig	2015-02-23 02:41:55.175120412 +0900
++++ config.h	2015-02-23 02:42:24.646119933 +0900
+@@ -217,3 +217,4 @@
+ #define DOUBLE_CAST (double)
+ #endif /* DOUBLE_CAST */
+ 
++#define EOL_HANDLING

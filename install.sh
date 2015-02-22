@@ -55,7 +55,7 @@ download_and_extract_dbgen() {
 apply_patches_to_dbgen() {
     cd $DATABASE
     echo "Apply patches ..."
-    for file_to_patch in dss.ddl dss.ri makefile.suite tpcd.h; do
+    for file_to_patch in config.h dss.ddl dss.ri makefile.suite tpcd.h; do
         # restore from backup
         if [ -f $DBGEN_DIR/$file_to_patch.orig ]; then
             cp -fp $DBGEN_DIR/$file_to_patch.orig $DBGEN_DIR/$file_to_patch
