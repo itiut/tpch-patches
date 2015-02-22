@@ -70,6 +70,7 @@ apply_patches_to_dbgen() {
 make_and_insall() {
     cd $DBGEN_DIR
     echo "Make ..."
+    make -f makefile.suite clean
     make -f makefile.suite
 
     echo "Install ..."
