@@ -86,21 +86,19 @@ make_and_insall() {
     fi
 
     for bin in dbgen qgen; do
-        if [ ! -f $BIN_DIR/$bin ]; then
-            cat > $BIN_DIR/$bin <<EOF
+        cat > $BIN_DIR/$bin <<EOF
 #!/bin/sh
 EOF
-            if [ "$bin" = 'qgen' ]; then
-                cat >> $BIN_DIR/$bin <<EOF
+        if [ "$bin" = 'qgen' ]; then
+            cat >> $BIN_DIR/$bin <<EOF
 cd $SHARE_DIR/queries
 EOF
-            fi
-            cat >> $BIN_DIR/$bin <<EOF
+        fi
+        cat >> $BIN_DIR/$bin <<EOF
 exec "$DBGEN_DIR/$bin" "-b" "$SHARE_DIR/dists.dss" "\$@"
 EOF
-            chmod +x $BIN_DIR/$bin
-            echo "Wrote $BIN_DIR/$bin"
-        fi
+        chmod +x $BIN_DIR/$bin
+        echo "Wrote $BIN_DIR/$bin"
     done
     cd - > /dev/null
 }
