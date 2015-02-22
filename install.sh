@@ -95,7 +95,7 @@ cd $SHARE_DIR/queries
 EOF
         fi
         cat >> $BIN_DIR/$bin <<EOF
-exec "$DBGEN_DIR/$bin" "-b" "$SHARE_DIR/dists.dss" "\$@"
+exec "$SHARE_DIR/$bin" "-b" "$SHARE_DIR/dists.dss" "\$@"
 EOF
         chmod +x $BIN_DIR/$bin
         echo "Wrote $BIN_DIR/$bin"
