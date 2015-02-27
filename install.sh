@@ -74,11 +74,9 @@ make_and_insall() {
     make -f makefile.suite
 
     echo "Install ..."
-    for f in dbgen qgen dists.dss dss.ddl dss.ri; do
-        if [ -f $f ]; then
-            cp -fp $f $SHARE_DIR
-            echo "Copied to $SHARE_DIR/$f"
-        fi
+    for f in answers check_answers/cmpq.pl dbgen qgen dists.dss dss.ddl dss.ri; do
+        cp -fpr $f $SHARE_DIR
+        echo "Copied to $SHARE_DIR/$f"
     done
 
     if [ -d $BASE_DIR/$DATABASE/queries ]; then
