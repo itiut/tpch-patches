@@ -74,7 +74,7 @@ make_and_insall() {
     make -f makefile.suite
 
     echo "Install ..."
-    for f in answers check_answers/cmpq.pl dbgen qgen dists.dss dss.ddl dss.ri; do
+    for f in answers check_answers/cmpq.pl check_answers/colprecision.txt dbgen qgen dists.dss dss.ddl dss.ri; do
         cp -fpr $f $SHARE_DIR
         echo "Copied to $SHARE_DIR/$f"
     done
