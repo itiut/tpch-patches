@@ -39,7 +39,7 @@ ensure_directories() {
 }
 
 download_and_extract_dbgen() {
-    cd $SRC_DIR
+    pushd $SRC_DIR
     if [ ! -f $TPCH_PROG.zip ]; then
         echo "Download $TPCH_PROG.zip ..."
         curl -LO http://www.tpc.org/tpch/spec/$TPCH_PROG.zip
@@ -49,11 +49,11 @@ download_and_extract_dbgen() {
         unzip $TPCH_PROG
         rm -rf __MACOSX
     fi
-    cd - > /dev/null
+    popd
 }
 
 apply_patches_to_dbgen() {
-    cd $DATABASE
+    pushd $DATABASE
     echo "Apply patches ..."
     for file_to_patch in config.h dss.ddl dss.ri makefile.suite tpcd.h; do
         # restore from backup
@@ -64,11 +64,11 @@ apply_patches_to_dbgen() {
             patch -bu $DBGEN_DIR/$file_to_patch < $file_to_patch.patch
         fi
     done
-    cd - > /dev/null
+    popd
 }
 
 make_and_insall() {
-    cd $DBGEN_DIR
+    pushd $DBGEN_DIR
     echo "Make ..."
     make -f makefile.suite clean
     make -f makefile.suite
@@ -101,7 +101,7 @@ EOF
         chmod +x $BIN_DIR/$bin
         echo "Wrote $BIN_DIR/$bin"
     done
-    cd - > /dev/null
+    popd
 }
 
 ensure_directories
